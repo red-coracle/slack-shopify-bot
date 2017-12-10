@@ -1,0 +1,13 @@
+[Unit]
+Description=Shopify order notification app
+After=network.target
+
+[Service]
+User=deploy
+Group=deploy
+ExecStart=/path/to/order-notifiy/venv/bin/python /path/to/order-notifiy/order-notify.py
+Restart=always
+StandardOutput=syslog
+
+[Install]
+WantedBy=multi-user.target
